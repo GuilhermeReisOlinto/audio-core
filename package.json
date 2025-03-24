@@ -2,17 +2,23 @@
   "name": "audio-core",
   "version": "1.0.0",
   "description": "Application of converege audio in a text for send IA",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
-    "start": "ts-node src/index.ts",
+    "start": "node --loader @esbuild-kit/esm-loader src/index.ts",
+    "start-prod": "npx tsc && node dist/index.js",
+    "start-dev": "tsx watch src/index.ts",
     "build": "tsc",
     "dev": "ts-node-dev src/index.ts"
   },
   "author": "Guilherme Olinto",
   "license": "ISC",
   "devDependencies": {
+    "@esbuild-kit/esm-loader": "^2.6.5",
+    "@types/express": "^5.0.1",
     "@types/node": "^22.13.13",
     "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "tsx": "^4.19.3",
     "typescript": "^5.8.2"
   },
   "dependencies": {
